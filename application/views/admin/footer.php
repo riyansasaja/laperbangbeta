@@ -40,11 +40,11 @@
 
 <script>
     $(document).ready(function() {
-        // const path = windows.location.origin;
+        const path = window.location.origin;
         //ambil data get_log_inbox
         $.ajax({
             type: "get",
-            url: "https://laperbang.pta-manado.go.id/Admin/get_log_inbox",
+            url: `${path}/Admin/get_log_inbox`,
             dataType: "JSON",
             success: function(response) {
                 //hitung jumlah data yang masuk
@@ -54,7 +54,7 @@
                 let text = ''
                 //pengulangan response.data
                 $.each(response.data, function(index, val) {
-                    console.log(val);
+                    // console.log(val);
                     //tampilkan pemberitahuan
                     text = `<li><a class="dropdown-item isi" href="#!" data-id="${val.id_log_inbox}">Perkara Baru nomor ${val.no_perkara}</a></li>`
                     $('#inbox-isi').append(text);
@@ -69,7 +69,7 @@
 
             $.ajax({
                 type: "POST",
-                url: "https://laperbang.pta-manado.go.id/Admin/click_log_inbox",
+                url: `${path}/Admin/click_log_inbox`,
                 data: {
                     id: id
                 },
