@@ -38,7 +38,7 @@ assets/files/
 # tambahkan folder  berikut dalam folder files "bundle_a" | "bundle_b" | "putusan" | "SuratPengantar"
 qrcodeimg/
 user_guide/
-.htaccess
+/.htaccess
 
 # ---
 # yang ini tidak perlu ditambahkan
