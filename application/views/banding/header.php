@@ -25,7 +25,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-gradient-satu">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
         <div class="container">
             <a class="navbar-brand" href="<?= base_url('home'); ?>">
                 <img src="<?= base_url('assets/img/') ?>logoapp.png" alt="" width="100" class="drop-shadow">
