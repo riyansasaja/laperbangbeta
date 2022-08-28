@@ -124,7 +124,7 @@ class PA_laper extends CI_Controller
                 $laper_pdf = $this->upload->data("file_name");
             } else {
                 $this->session->set_flashdata('msg', 'Upload file gagal');
-                redirect('PA_laper/');
+                redirect('laporan/');
                 // $error = array('error' => $this->upload->display_errors());
                 // $this->load->view('banding/uploadbundle', $error);
             }
@@ -135,7 +135,7 @@ class PA_laper extends CI_Controller
                 $laper_xls = $this->upload->data("file_name");
             } else {
                 $this->session->set_flashdata('msg', 'Upload file gagal');
-                redirect('PA_laper/');
+                redirect('laporan/');
                 // $error = array('error' => $this->upload->display_errors());
                 // $this->load->view('banding/uploadbundle', $error);
             }
@@ -154,8 +154,7 @@ class PA_laper extends CI_Controller
 
         $this->db->insert('laporan_perkara', $data);
         $this->session->set_flashdata('flash', 'Upload file berhasil');
-
-        redirect('PA_laper/');
+        redirect('laporan/');
     }
 
     public function revisi_laporan_perkara()
@@ -183,7 +182,7 @@ class PA_laper extends CI_Controller
                 $laper_pdf = $this->upload->data("file_name");
             } else {
                 $this->session->set_flashdata('msg', 'Upload file gagal');
-                redirect('PA_laper/');
+                redirect('laporan/');
                 // $error = array('error' => $this->upload->display_errors());
                 // $this->load->view('banding/uploadbundle', $error);
             }
@@ -194,7 +193,7 @@ class PA_laper extends CI_Controller
                 $laper_xls = $this->upload->data("file_name");
             } else {
                 $this->session->set_flashdata('msg', 'Upload file gagal');
-                redirect('PA_laper/');
+                redirect('laporan/');
                 // $error = array('error' => $this->upload->display_errors());
                 // $this->load->view('banding/uploadbundle', $error);
             }
@@ -211,7 +210,7 @@ class PA_laper extends CI_Controller
         $this->db->insert('revisi_laporan', $data);
 
         $this->session->set_flashdata('flash', 'Upload file berhasil');
-        redirect('PA_laper/');
+        redirect('laporan/');
     }
 
     public function triwulan()

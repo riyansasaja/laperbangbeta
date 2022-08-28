@@ -60,7 +60,7 @@
                             <h5>PELAPORAN <br>PERKARA</h5>
                             <img src="<?= base_url('assets/img/') ?>perkara_logo.png" alt="" style="width: 8rem;">
                             <p>Pengunggahan dokumen keadaan <br>perkara</p>
-                            <a href="" class="btn btn-block text-white bg-dua disabled" role="button" aria-disabled="true">MASUK</a>
+                            <a href="<?= base_url('laporan/') ?>" class="btn btn-block text-white bg-dua " role="button" aria-disabled="true">MASUK</a>
                         </div>
                     </div>
                 </div>
