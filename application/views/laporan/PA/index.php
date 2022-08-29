@@ -17,21 +17,26 @@
           </script>
         </h6>
         <!-- dropdown start -->
-        <div class="d-flex justify-content-center">
+        <!-- <div class="d-flex justify-content-center">
           <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
               Pilih Tahun
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" id="tahun">
-              <?php foreach ($years as $y) : ?>
+              <?php //foreach ($years as $y) : 
+              ?>
 
-                <li><a class="dropdown-item" href="<?php echo base_url(); ?>/laporan/<?php echo $y['year'];  ?>" value="1"><?php echo $y['year']; ?></a></li>
+                <li><a class="dropdown-item" href="<?php //echo base_url(); 
+                                                    ?>/laporan/<?php //echo $y['year'];  
+                                                                                        ?>" value="1"><?php //echo $y['year']; 
+                                                                                                                                ?></a></li>
 
 
-              <?php endforeach; ?>
+              <?php //endforeach; 
+              ?>
             </ul>
           </div>
-        </div>
+        </div> -->
         <!-- dropdown end -->
       </div>
     </div>
