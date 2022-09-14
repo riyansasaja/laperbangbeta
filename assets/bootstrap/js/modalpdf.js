@@ -1,6 +1,6 @@
 $(document).ready(function () {
-    const path = window.location.origin + '/b5-frontend-lapperkara/';
-    console.log(path);
+    const path = window.location.origin;
+    console.log(`pathnya adalah ${path}`);
 
     $('#modalPdf').on('show.bs.modal', function (e) {
         let getdata = $(e.relatedTarget).data('id');

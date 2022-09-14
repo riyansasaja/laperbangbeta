@@ -83,7 +83,13 @@ class PA_laper extends CI_Controller
             // Download the file to your desktop
             $this->zip->download("$folder-revisi.zip");
         } else {
-            $this->session->set_flashdata('msg', 'Tidak ada Revisi');
+            $this->session->set_flashdata('msg', 'Tidak ada Revisi'); //kop pesannya
+            $this->session->set_flashdata('properties', 'Anda tidak bisa mendowload file "ZIP" karena belum ada data Revisi !'); //isi pesannya.
+            //di tampilkan di view baru ('view_message')
+            $this->load->view('laporan/templates/header');
+            $this->load->view('laporan/view_message');
+            $this->load->view('laporan/templates/footer', '');
+            //end
         }
     }
 
