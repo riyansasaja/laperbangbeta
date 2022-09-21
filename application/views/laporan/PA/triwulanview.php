@@ -111,7 +111,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                         <tr>
                                             <td>
                                                 <div class="d-flex flex-column justify-content-center">
-                                                    <p class="text-xs text-secondary mb-0 ms-3"><?php echo $lhs['id_triwulan'] ?></p>
+                                                    <p class="text-xs text-secondary mb-0 ms-3"><?php echo $i ?></p>
                                                 </div>
                                             </td>
                                             <td>
@@ -164,6 +164,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                                 <?php endif; ?>
                                             </td>
                                         </tr>
+                                        <?php $i++ ?>
                                     <?php endforeach; ?>
                                     <!-- looping data end -->
 
