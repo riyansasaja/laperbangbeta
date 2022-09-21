@@ -126,7 +126,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
                                                 <span class="text-secondary text-xs font-weight-normal">
                                                     <a href="#!" data-bs-toggle="modal" data-bs-target="#triwulanPdf" data-id="<?= $lhs['kode_pa'] ?> <?= $lhs['berkas_laporan'] ?> <?= $lhs['periode_tahun'] ?>/<?= $lhs['nm_laporan'] ?>/<?= $lhs['lap_pdf'] ?>" class="fas fa-file-pdf"></a> |
-                                                    <a href="<?php echo base_url() ?>index.php/PA_laper/download_xls_triwulan/<?= $lhs['id_triwulan'] ?>" class="fas fa-file-excel"></a>
+                                                    <a href="<?php echo base_url() ?>laporan/PA_laper/download_xls_triwulan/<?= $lhs['id_triwulan'] ?>" class="fas fa-file-excel"></a>
                                                 </span>
                                             </td>
 
@@ -139,7 +139,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
                                             <td class="align-middle text-center">
                                                 <span class="text-secondary text-xs font-weight-normal">
-                                                    <a href="#" data-bs-toggle="modal" data-bs-target="#revisiModal<?= $lhs['id_triwulan'] ?>" class="fas fa-upload"></a> | <a href="<?php echo base_url() ?>index.php/PA_laper/zip_file_triwulan/<?= $lhs['id_triwulan'] ?>" class="fas fa-download"></a>
+                                                    <a href="#" data-bs-toggle="modal" data-bs-target="#revisiModal<?= $lhs['id_triwulan'] ?>" class="fas fa-upload"></a> | <a href="<?php echo base_url() ?>laporan/PA_laper/zip_file_triwulan/<?= $lhs['id_triwulan'] ?>" class="fas fa-download"></a>
                                                 </span>
 
                                             </td>

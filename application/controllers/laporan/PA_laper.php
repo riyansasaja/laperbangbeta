@@ -284,12 +284,11 @@ class PA_laper extends CI_Controller
 
         //user id tidak sesuai
         if ($this->session->userdata('id') != $data['laporan'][0]['id_user']) {
-            $this->session->set_flashdata('msg', 'File Kosong'); //kop pesannya
-            $this->session->set_flashdata('properties', 'Anda tidak bisa Melihat File, karena belum mengupload File Laporan Triwulan, Silahkan Upload Laporan Triwulan!'); //isi pesannya.
-            //di tampilkan di view baru ('view_message')
+            //buat Flash  message
+            $this->session->set_flashdata('msg', 'File Kosong');
+            $this->session->set_flashdata('properties', 'Anda tidak bisa Melihat File, karena belum mengupload File Laporan Triwulan, Silahkan Upload Laporan Triwulan!');
+            //kirim ke error view
             redirect('laporan/pa_laper/errorview/');
-
-            //end
         } else {
             $this->load->view('laporan/templates/header');
             $this->load->view('laporan/templates/side');
@@ -324,7 +323,7 @@ class PA_laper extends CI_Controller
                 $laper_pdf = $this->upload->data("file_name");
             } else {
                 $this->session->set_flashdata('msg', 'Upload file gagal');
-                redirect('PA_laper/triwulan/');
+                redirect('laporan/pa_laper/errorview/');
                 // $error = array('error' => $this->upload->display_errors());
                 // $this->load->view('banding/uploadbundle', $error);
             }
@@ -335,7 +334,7 @@ class PA_laper extends CI_Controller
                 $laper_xls = $this->upload->data("file_name");
             } else {
                 $this->session->set_flashdata('msg', 'Upload file gagal');
-                redirect('PA_laper/triwulan');
+                redirect('laporan/pa_laper/errorview/');
                 // $error = array('error' => $this->upload->display_errors());
                 // $this->load->view('banding/uploadbundle', $error);
             }
@@ -373,6 +372,7 @@ class PA_laper extends CI_Controller
             force_download("laporan_triwulan/$folder/$nm_laporan/" . $data['laporan'][0]['lap_xls'], null);
         } else {
             $this->session->set_flashdata('msg', 'Belum ada laporan');
+            redirect('laporan/pa_laper/errorview/');
         }
     }
 
@@ -394,6 +394,7 @@ class PA_laper extends CI_Controller
             $this->zip->download("$folder-revisi.zip");
         } else {
             $this->session->set_flashdata('msg', 'Tidak ada Revisi');
+            redirect('laporan/pa_laper/errorview/');
         }
     }
 
@@ -425,7 +426,7 @@ class PA_laper extends CI_Controller
                 $laper_pdf = $this->upload->data("file_name");
             } else {
                 $this->session->set_flashdata('msg', 'Upload file gagal');
-                redirect('PA_laper/triwulan/');
+                redirect('laporan/pa_laper/errorview/');
                 // $error = array('error' => $this->upload->display_errors());
                 // $this->load->view('banding/uploadbundle', $error);
             }
@@ -436,7 +437,7 @@ class PA_laper extends CI_Controller
                 $laper_xls = $this->upload->data("file_name");
             } else {
                 $this->session->set_flashdata('msg', 'Upload file gagal');
-                redirect('PA_laper/triwulan/');
+                redirect('laporan/pa_laper/errorview/');
                 // $error = array('error' => $this->upload->display_errors());
                 // $this->load->view('banding/uploadbundle', $error);
             }
@@ -454,7 +455,7 @@ class PA_laper extends CI_Controller
         $this->db->update('lap_tri_detail', $data, $where);
 
         $this->session->set_flashdata('flash', 'Upload file berhasil');
-        redirect('PA_laper/triwulan/');
+        redirect('laporan/pa_laper/triwulan/');
     }
 
     public function errorview()
