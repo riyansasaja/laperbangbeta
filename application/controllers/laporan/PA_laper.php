@@ -226,7 +226,6 @@ class PA_laper extends CI_Controller
 
 
         $this->load->view('laporan/templates/header');
-        $this->load->view('laporan/templates/side');
         $this->load->view('laporan/PA/triwulan', $data);
         $this->load->view('laporan/templates/footer', $data);
     }
@@ -264,12 +263,11 @@ class PA_laper extends CI_Controller
 
     public function addTriwulan($id)
     {
-        $data['js'] = '';
+        $data['js'] = 'kosong.js';
         $data['laporan'] = $this->db->get_where('v_triwulan_laporan', ['id' => $id])->result_array();
 
 
         $this->load->view('laporan/templates/header');
-        $this->load->view('laporan/templates/side');
         $this->load->view('laporan/PA/add_triwulan', $data);
         $this->load->view('laporan/templates/footer', $data);
     }
@@ -291,7 +289,6 @@ class PA_laper extends CI_Controller
             redirect('laporan/pa_laper/errorview/');
         } else {
             $this->load->view('laporan/templates/header');
-            $this->load->view('laporan/templates/side');
             $this->load->view('laporan/PA/triwulanview', $data);
             $this->load->view('laporan/templates/footer', $data);
         }
