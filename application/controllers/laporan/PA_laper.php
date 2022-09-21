@@ -31,7 +31,7 @@ class PA_laper extends CI_Controller
         $data['js'] = 'status.js';
         $data['laporan'] = $this->m_laper->get_year($year);
         $data['years'] = $this->m_laper->get_years();
-        $this->load->view('PA/index', $data);
+        $this->load->view('laporan/PA/index', $data);
     }
 
     public function view_laporan($id)
@@ -225,16 +225,16 @@ class PA_laper extends CI_Controller
         $data['laporan'] = $this->m_laper->get_data_triwulan();
 
 
-        $this->load->view('templates/header');
-        $this->load->view('templates/side');
-        $this->load->view('PA/triwulan', $data);
-        $this->load->view('templates/footer', $data);
+        $this->load->view('laporan/templates/header');
+        $this->load->view('laporan/templates/side');
+        $this->load->view('laporan/PA/triwulan', $data);
+        $this->load->view('laporan/templates/footer', $data);
     }
 
     public function add_lap_triwulan()
     {
-        $year = '%Y';
-        $tahun = mdate($year);
+        // $year = '%Y';
+        $tahun = date('Y');
         $periode_triwulan = $this->input->post('lap_triwulan');
 
         if ($periode_triwulan == "03") {
@@ -259,7 +259,7 @@ class PA_laper extends CI_Controller
 
         $this->db->insert('laporan_triwulan', $data);
 
-        redirect('PA_laper/triwulan/');
+        redirect('laporan/PA_laper/triwulan/');
     }
 
     public function addTriwulan($id)
@@ -268,10 +268,10 @@ class PA_laper extends CI_Controller
         $data['laporan'] = $this->db->get_where('v_triwulan_laporan', ['id' => $id])->result_array();
 
 
-        $this->load->view('templates/header');
-        $this->load->view('templates/side');
-        $this->load->view('PA/add_triwulan', $data);
-        $this->load->view('templates/footer', $data);
+        $this->load->view('laporan/templates/header');
+        $this->load->view('laporan/templates/side');
+        $this->load->view('laporan/PA/add_triwulan', $data);
+        $this->load->view('laporan/templates/footer', $data);
     }
 
     public function view_triwulan($id)
@@ -284,12 +284,17 @@ class PA_laper extends CI_Controller
 
         //user id tidak sesuai
         if ($this->session->userdata('id') != $data['laporan'][0]['id_user']) {
-            redirect('PA_laper/triwulan');
+            $this->session->set_flashdata('msg', 'File Kosong'); //kop pesannya
+            $this->session->set_flashdata('properties', 'Anda tidak bisa Melihat File, karena belum mengupload File Laporan Triwulan, Silahkan Upload Laporan Triwulan!'); //isi pesannya.
+            //di tampilkan di view baru ('view_message')
+            redirect('laporan/pa_laper/errorview/');
+
+            //end
         } else {
-            $this->load->view('templates/header');
-            $this->load->view('templates/side');
-            $this->load->view('PA/triwulanview', $data);
-            $this->load->view('templates/footer', $data);
+            $this->load->view('laporan/templates/header');
+            $this->load->view('laporan/templates/side');
+            $this->load->view('laporan/PA/triwulanview', $data);
+            $this->load->view('laporan/templates/footer', $data);
         }
     }
 
@@ -450,5 +455,12 @@ class PA_laper extends CI_Controller
 
         $this->session->set_flashdata('flash', 'Upload file berhasil');
         redirect('PA_laper/triwulan/');
+    }
+
+    public function errorview()
+    {
+        $this->load->view('laporan/templates/header');
+        $this->load->view('laporan/view_message');
+        $this->load->view('laporan/templates/footer', '');
     }
 }

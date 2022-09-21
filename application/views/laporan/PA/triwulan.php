@@ -126,7 +126,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                             <?php endif; ?>
                                         </td>
                                         <td class="align-middle">
-                                            <a href="<?php echo base_url('PA_laper/addtriwulan/') . $lp['id'] ?>" class="text-secondary font-weight-normal text-xs" data-toggle="tooltip" data-original-title="Upload">
+                                            <a href="<?php echo base_url('laporan/pa_laper/addtriwulan/') . $lp['id'] ?>" class="text-secondary font-weight-normal text-xs" data-toggle="tooltip" data-original-title="Upload">
                                                 <i class="fas fa-upload" title="Upload Laporan"></i>
                                             </a> |
                                             <!-- <a href="javascript:;" class="text-secondary font-weight-normal text-xs" data-toggle="tooltip" data-original-title="Edit">
@@ -135,7 +135,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                             <!-- <a href="javascript:;" class="text-secondary font-weight-normal text-xs" data-toggle="tooltip" data-original-title="Download">
                                                 <i class="fas fa-download"></i>
                                             </a> | -->
-                                            <a href="<?= base_url('PA_laper/view_triwulan/') . $lp['id'] ?>" class="text-secondary font-weight-normal text-xs" data-toggle="tooltip" data-original-title="Lihat">
+                                            <a href="<?= base_url('laporan/pa_laper/view_triwulan/') . $lp['id'] ?>" class="text-secondary font-weight-normal text-xs" data-toggle="tooltip" data-original-title="Lihat">
                                                 <i class="fa fa-eye" title="Detail"></i>
                                             </a>
                                         </td>
@@ -164,7 +164,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             </div>
                             <div class="modal-body">
                                 <!-- form start -->
-                                <form method="POST" action="<?php echo base_url('PA_laper/add_lap_triwulan'); ?>" enctype="multipart/form-data">
+                                <form method="POST" action="<?php echo base_url('laporan/PA_laper/add_lap_triwulan'); ?>" enctype="multipart/form-data">
                                     <div class="mb-3">
                                         <label for="user_pp" class="form-label">Laporan Triwulan</label>
                                         <select class="form-select" id="lap_triwulan" name="lap_triwulan">
