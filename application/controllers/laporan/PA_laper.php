@@ -221,7 +221,7 @@ class PA_laper extends CI_Controller
 
     public function triwulan()
     {
-        $data['js'] = '';
+        $data['js'] = 'kosong.js';
         $data['laporan'] = $this->m_laper->get_data_triwulan();
 
 

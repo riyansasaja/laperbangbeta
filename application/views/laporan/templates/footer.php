@@ -5,7 +5,7 @@
                 <div class="copyright text-center text-sm text-muted text-lg-start">
                     ©
                     <script>
-                        document.write(new Date().getFullYear())
+                        document.write(new Date().getFullYear());
                     </script>,
                     made with <i class="fa fa-heart"></i> by Tim IT PTA Manado
                 </div>
@@ -25,8 +25,6 @@
 <!-- javascript -->
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 <script src="<?= base_url('assets/bootstrap/js/') . $js ?>"></script>
-
-</script>
 
 </body>
 
